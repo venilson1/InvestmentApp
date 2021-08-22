@@ -1,6 +1,4 @@
-export default function App() {
-  console.log('Teste no console do navegador');
-
+export default function InvestmentsPage() {
   return (
     <div>
       <header>
@@ -17,5 +15,5 @@ export default function App() {
         </div>
       </main>
     </div>
-  );
+  )
 }
