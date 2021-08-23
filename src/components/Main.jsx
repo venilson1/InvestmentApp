@@ -1,8 +1,11 @@
-export default function Main({children}) {
+export default function Main({children, title}) {
   return (
     <main className="bg-purple-100">
-      <div className="container mx-auto p-4 bg-pink-100">
-        {children}
+      <div className="container mx-auto p-4">
+        <h1 className=" text-3xl font-semibold text-center p-2">
+          {title}
+        </h1>
+         {children}
       </div>
     </main>
   )
