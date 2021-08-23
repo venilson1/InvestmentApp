@@ -1,9 +1,9 @@
 import Header from "../components/Header"
 import Main from "../components/Main"
 import {data} from '../data/investments'
-import Investments from './../components/Investments';
+import Investments from '../components/Investments';
 
-export default function InvestmentsPage() {
+export default function CriptoPage() {
 
   const criptoId = data.investments[1].id;
   const criptoInvestments = data.reports
@@ -13,7 +13,7 @@ export default function InvestmentsPage() {
   return (
     <div>
       <Header/>
-      <Main title={data.investments[1].description}>
+      <Main title={data.investments[1].description} description>
         <Investments>{criptoInvestments}</Investments>
       </Main>
     </div>

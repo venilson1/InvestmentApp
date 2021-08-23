@@ -1,4 +1,4 @@
-import InvestmentsPage from './pages/InvestmentsPage';
+import CriptoPage from './pages/CriptoPage';
 export default function App() {
-  return <InvestmentsPage/>;
+  return <CriptoPage/>;
 }
