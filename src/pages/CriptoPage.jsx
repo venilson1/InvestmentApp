@@ -11,12 +11,12 @@ export default function CriptoPage() {
   .filter(e => e.investmentId === criptoId)
   .sort((a, b) => a.month - b.month)
 
-  console.log(calculatePercetageGeneral(criptoInvestments));
+  const income = calculatePercetageGeneral(criptoInvestments)
 
   return (
     <div>
       <Header/>
-      <Main title={data.investments[1].description} description>
+      <Main title={data.investments[1].description} income={income}>
         <Investments>{criptoInvestments}</Investments>
       </Main>
     </div>
