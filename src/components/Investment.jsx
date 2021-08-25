@@ -16,6 +16,8 @@ export default function Investment({
             const valueColor =
             percent === 0 ? 'text-black': 
             percent > 0 ? 'text-green-600': 'text-red-600';
+
+            const positive = percent > 0? '+' : ''
             
             return (
               <div key={id} className="flex justify-between m-2 font-semibold items-center bg-gray-300 p-2">
@@ -23,7 +25,7 @@ export default function Investment({
                   <span className="bg-purple-500 p-1 rounded-md font-normal">{helpersFormatDate(month)}/{year}</span>
                   <span className={`${valueColor}`}>{helpersFormatMoney(value)}</span>
                 </div>
-                <span className={`${valueColor}`}>{percent.toFixed(2)} %</span>
+                <span className={`${valueColor}`}>{positive}{percent.toFixed(2)} %</span>
                 
               </div>
             )
