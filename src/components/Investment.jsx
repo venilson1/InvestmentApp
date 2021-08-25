@@ -1,3 +1,5 @@
+
+import { helpersFormatDate } from '../helpers/helpersFormatDate';
 export default function Investment({
   description = '',
   reports = []
@@ -12,7 +14,7 @@ export default function Investment({
             return (
               <div key={id} className="flex justify-between">
                 <div className="flex flex-grow space-x-4">
-                  <span>{month}/{year}</span>
+                  <span>{helpersFormatDate(month)}/{year}</span>
                   <span>{value}</span>
                 </div>
                 <span>{percent}%</span>
