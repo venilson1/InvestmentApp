@@ -18,7 +18,7 @@ export default function Investment({
                   <span>{helpersFormatDate(month)}/{year}</span>
                   <span>{helpersFormatMoney(value)}</span>
                 </div>
-                <span>{percent}%</span>
+                <span>{percent.toFixed(2)} %</span>
                 
               </div>
             )
