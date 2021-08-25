@@ -628,6 +628,18 @@ investments.forEach((elIn, i, array) => {
   .filter(elRe => elRe.investmentId === elIn.id)
   .sort((a,b) => a.month - b.month)
   Object.values(elIn.reports).map(el => el.value = +el.value.toFixed(2))
+
+  Object.values(elIn.reports).map((el, i, array) => {
+    const balanceGeneral = array[11].value - array[0].value
+    const balancePercentage = balanceGeneral / 10;
+
+    return elIn.Balance = {
+      balanceGeneral,
+      balancePercentage
+    }
+  })
+  
+
 })
 
 investments.forEach(({reports}) => reports.map((el, i, array) => {
@@ -640,3 +652,4 @@ export{
   data,
   investments
 }
+console.log(investments);
