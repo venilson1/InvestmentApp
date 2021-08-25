@@ -630,12 +630,12 @@ investments.forEach((elIn, i, array) => {
   Object.values(elIn.reports).map(el => el.value = +el.value.toFixed(2))
 
   Object.values(elIn.reports).map((el, i, array) => {
-    const balanceGeneral = array[11].value - array[0].value
-    const balancePercentage = balanceGeneral / 10;
+    const general = array[11].value - array[0].value
+    const percentage = general / 10;
 
-    return elIn.Balance = {
-      balanceGeneral,
-      balancePercentage
+    return elIn.balance = {
+      general,
+      percentage
     }
   })
   
@@ -652,4 +652,3 @@ export{
   data,
   investments
 }
-console.log(investments);

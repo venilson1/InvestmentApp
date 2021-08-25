@@ -12,12 +12,13 @@ export default function CriptoPage() {
       <Main>
         <Investments>
           {
-            investments.map(({ id, description, reports }) => {
+            investments.map(({ id, description, reports, balance }) => {
               return (
                 <Investment 
                   key={id} 
                   description={description} 
                   reports={reports} 
+                  balance={balance}
                 />
               )
             })

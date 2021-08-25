@@ -3,12 +3,25 @@ import { helpersFormatDate } from '../helpers/helpersFormatDate';
 import helpersFormatMoney from '../helpers/helpersFormatMoney';
 export default function Investment({
   description = '',
-  reports = []
+  reports = [],
+  balance = []
 }) {
+
+  const {general, percentage} = balance
+
+  const balanceColor = general > 0? 'text-green-600': 'text-red-600'
+
   return (
     <div className=" shadow-xl bg-purple-100-100 p-2 mb-6">
-      <div className="font-bold text-center p-6 text-xl">
-        <p>{description}</p>
+      <div className="text-center p-6 ">
+        <p className="text-xl font-bold">{description}</p>
+        <p>
+          Rendimento total: 
+            <span className={balanceColor}>
+              {helpersFormatMoney(general)} 
+              ( {percentage.toFixed(2).replace('.', ',')}% )
+            </span>
+          </p>
       </div>
       {
           reports.map(({id, month, year, value, percent}) => {
