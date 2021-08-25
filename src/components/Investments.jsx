@@ -3,7 +3,7 @@ export default function Investments({
 }) {
 
   return (
-    <div className="border-2 border-black">
+    <div>
       {investments}
     </div>
   )

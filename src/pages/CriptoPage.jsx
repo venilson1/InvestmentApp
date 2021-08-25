@@ -1,19 +1,26 @@
 import Header from "../components/Header"
 import Main from "../components/Main"
-import {investments} from '../data/investments'
+import { investments } from '../data/investments'
 import Investments from '../components/Investments';
+import Investment from "../components/Investment";
 
 export default function CriptoPage() {
 
+  console.log(investments);
+
   return (
     <div>
-      <Header/>
+      <Header />
       <Main>
         <Investments>
           {
-            investments.map(({id, description}) => {
+            investments.map(({ id, description, reports }) => {
               return (
-                <p>{id}</p>
+                <Investment 
+                  key={id} 
+                  description={description} 
+                  reports={reports} 
+                />
               )
             })
           }
