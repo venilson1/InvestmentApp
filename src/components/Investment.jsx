@@ -6,19 +6,24 @@ export default function Investment({
   reports = []
 }) {
   return (
-    <div>
-      <div>
+    <div className=" shadow-xl bg-purple-100-100 p-2 m-6">
+      <div className="font-bold text-center p-6 text-xl">
         <p>{description}</p>
       </div>
       {
           reports.map(({id, month, year, value, percent}) => {
+            
+            const valueColor =
+            percent === 0 ? 'text-black': 
+            percent > 0 ? 'text-green-600': 'text-red-600';
+            
             return (
-              <div key={id} className="flex justify-between">
-                <div className="flex flex-grow space-x-4">
-                  <span>{helpersFormatDate(month)}/{year}</span>
-                  <span>{helpersFormatMoney(value)}</span>
+              <div key={id} className="flex justify-between m-2 font-semibold items-center bg-gray-300 p-2">
+                <div className="flex flex-grow space-x-4 p-2 items-center">
+                  <span className="bg-purple-500 p-1 rounded-md font-normal">{helpersFormatDate(month)}/{year}</span>
+                  <span className={`${valueColor}`}>{helpersFormatMoney(value)}</span>
                 </div>
-                <span>{percent.toFixed(2)} %</span>
+                <span className={`${valueColor}`}>{percent.toFixed(2)} %</span>
                 
               </div>
             )
