@@ -1,4 +1,4 @@
-export const data = {
+const data = {
   investments: [
     {
       id: "3176856a-82cf-4ce9-8803-c65107c7ad5e",
@@ -623,11 +623,20 @@ export const data = {
 
 const {investments, reports} = data
 
-investments.forEach(elIn => {
+investments.forEach((elIn, i, array) => {
   elIn.reports = reports
   .filter(elRe => elRe.investmentId === elIn.id)
   .sort((a,b) => a.month - b.month)
   Object.values(elIn.reports).map(el => el.value = +el.value.toFixed(2))
 })
 
-console.log(investments);
+investments.forEach(({reports}) => reports.map((el, i, array) => {
+  const incomeValue = array[i - 1]? el.value - array[i -1].value : 0
+  const percent = array[i - 1]? incomeValue * 100 / array[i -1].value : 0
+  return el.percent = +percent.toFixed(2)
+}))
+
+export{
+  data,
+  investments
+}
