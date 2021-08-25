@@ -1,6 +1,6 @@
 import Header from "../components/Header"
 import Main from "../components/Main"
-import {data} from '../data/investments'
+import {data, investments} from '../data/investments'
 import Investments from '../components/Investments';
 import calculatePercetageGeneral from './../helpers/calculatePercetageGeneral';
 
@@ -10,6 +10,8 @@ export default function CriptoPage() {
   const criptoInvestments = data.reports
   .filter(e => e.investmentId === criptoId)
   .sort((a, b) => a.month - b.month)
+
+  console.log(investments);
 
   const income = calculatePercetageGeneral(criptoInvestments)
 
