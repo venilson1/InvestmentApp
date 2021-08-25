@@ -6,8 +6,6 @@ import Investment from "../components/Investment";
 
 export default function CriptoPage() {
 
-  console.log(investments);
-
   return (
     <div>
       <Header />
