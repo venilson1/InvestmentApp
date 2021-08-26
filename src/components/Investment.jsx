@@ -17,11 +17,8 @@ export default function Investment({
         <p className="text-xl font-bold">{description}</p>
         <p>
           Rendimento total: 
-            <span className={balanceColor}>
-              {helpersFormatMoney(general)} 
-              ( {percentage.toFixed(2).replace('.', ',')}% )
-            </span>
-          </p>
+            <span className={balanceColor}> {helpersFormatMoney(general) } 
+            ( {percentage.toFixed(2).replace('.', ',')}% )</span></p>
       </div>
       {
           reports.map(({id, month, year, value, percent}) => {
@@ -30,8 +27,10 @@ export default function Investment({
             percent === 0 ? 'text-black': 
             percent > 0 ? 'text-green-600': 'text-red-600';
 
-            const positive = percent > 0? '+' : ''
-            
+            const positive = percent === 0 ? ' ':  
+            percent > 0? `▲ `: '▼ '
+            	
+
             return (
               <div key={id} className="flex justify-between m-2 font-semibold items-center bg-gray-300 p-2">
                 <div className="flex flex-grow space-x-4 p-2 items-center">
